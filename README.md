@@ -92,7 +92,7 @@ policies, and prefetch configurations across six benchmark traces:
 python3 run_experiments.py
 ```
 
-Output: `comprehensive_aat_results.csv`
+Output: `results.csv`
 
 ---
 
