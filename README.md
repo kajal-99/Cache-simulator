@@ -55,16 +55,16 @@ Requires g++ with C++17 support (`-std=c++17`). Tested on Linux and macOS.
 
 ```bash
 # L1 only — 16 KB, 4-way, 32 B blocks
-./cachesim -c 14 -b 5 -s 2 -D < traces/gcc.trace
+./cachesim -c 14 -b 5 -s 2 -D < traces/sample.trace
 
 # L1 + L2 — no prefetcher
-./cachesim -c 14 -b 5 -s 2 -C 17 -S 3 < traces/gcc.trace
+./cachesim -c 14 -b 5 -s 2 -C 17 -S 3 < traces/sample.trace
 
 # L1 + L2 — Markov prefetcher, 64-row table
-./cachesim -c 14 -b 5 -s 2 -C 17 -S 3 -F markov -r 64 < traces/gcc.trace
+./cachesim -c 14 -b 5 -s 2 -C 17 -S 3 -F markov -r 64 < traces/sample.trace
 
 # L1 + L2 — Hybrid prefetcher (Markov + next-line fallback)
-./cachesim -c 14 -b 5 -s 2 -C 17 -S 3 -F hybrid -r 128 < traces/gcc.trace
+./cachesim -c 14 -b 5 -s 2 -C 17 -S 3 -F hybrid -r 128 < traces/sample.trace
 ```
 
 ---
