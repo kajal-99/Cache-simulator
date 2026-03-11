@@ -157,6 +157,22 @@ Six memory access traces used for evaluation:
 
 ---
 
+## Results
+
+Experiments were run across six benchmark traces: `gcc`, `leela`, `linpack`, 
+`matmul_naive`, `matmul_tiled`, and `mcf`.
+
+Key observations:
+- Increasing L1 associativity from 1-way to 4-way consistently reduced AAT 
+  for irregular access patterns (gcc, leela)
+- The Hybrid prefetcher outperformed both Plus1 and standalone Markov on 
+  sparse traces (mcf) by falling back to next-line prefetching for cold addresses
+- Tiled matrix multiply showed significantly lower AAT than naive, confirming 
+  the impact of spatial locality on cache performance
+- Markov table sizes beyond 128 rows showed diminishing returns on most traces
+
+To reproduce results, run `python3 run_experiments.py` after building.
+
 ## Tech Stack
 
 C++17 &nbsp;·&nbsp; Python 3 &nbsp;·&nbsp; matplotlib &nbsp;·&nbsp; Make
